@@ -30,7 +30,7 @@ public static class ChessTask
         Rook
     }
 
-    private static Dictionary<string, Figure> figuresDict = new Dictionary<string, Figure>
+    private static Dictionary<string, Figure> _figuresDict = new Dictionary<string, Figure>
     {
         ["пешка"] = Figure.Pawn,
         ["король"] = Figure.King,
@@ -80,8 +80,8 @@ public static class ChessTask
 
         Console.Write("Название фигуры: ");
         var figureName = (Console.ReadLine() ?? "").ToLower();
-        var figure = figuresDict.ContainsKey(figureName) ?
-            figuresDict[figureName] :
+        var figure = _figuresDict.ContainsKey(figureName) ?
+            _figuresDict[figureName] :
             throw new Exception("Unknown figure");
 
         Console.Write("Позиция перед ходом: ");
