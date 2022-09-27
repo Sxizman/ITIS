@@ -29,7 +29,7 @@ public static class FibonacciTask
                 fibPower2 = t2 + t3;
             }
 
-            if (n % 2 != 0)
+            if (n % 2 == 1)
             {
                 var t1 = fibPower1 * fib1;
                 var t2 = fibPower1 * fib2;

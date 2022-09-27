@@ -2,6 +2,7 @@
 
 try
 {
+    CubeRootTask.Run();
     FibonacciTask.Run();
     FactorizationTask.Run();
     GCD_LSM_Task.Run();
