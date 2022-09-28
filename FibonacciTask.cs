@@ -9,40 +9,28 @@ public static class FibonacciTask
         if (n < 1)
             throw new ArgumentException("n must be positive");
 
+        BigInteger fib0 = 0;
         BigInteger fib1 = 1;
-        BigInteger fib2 = 0;
-        BigInteger fibPower1 = 0;
-        BigInteger fibPower2 = 0;
-        while (n > 0)
+
+        for (var bitMask = 1 << (int)Math.Log2(n); bitMask > 0; bitMask >>= 1)
         {
-            if (fibPower2 == 0)
+            var t0 = fib0 * fib0;
+            var t1 = 2 * fib0 * fib1;
+            var t2 = fib1 * fib1;
+
+            if ((n & bitMask) == 0)
             {
-                fibPower2 = 1;
+                fib0 = t1 - t0;
+                fib1 = t2 + t0;
             }
             else
             {
-                var t1 = fibPower1 * fibPower1;
-                var t2 = fibPower2 * fibPower2;
-                var t3 = 2 * fibPower1 * fibPower2;
-
-                fibPower1 = t1 + t2;
-                fibPower2 = t2 + t3;
+                fib0 = t0 + t2;
+                fib1 = t1 + t2;
             }
-
-            if (n % 2 == 1)
-            {
-                var t1 = fibPower1 * fib1;
-                var t2 = fibPower1 * fib2;
-                var t3 = fibPower2 * fib1;
-                var t4 = fibPower2 * fib2;
-
-                fib1 = t1 + t4;
-                fib2 = t2 + t3 + t4;
-            }
-            n /= 2;
         }
 
-        return fib2;
+        return fib0;
     }
 
     public static void Run()
