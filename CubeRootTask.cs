@@ -16,7 +16,7 @@ public static class CubeRootTask
         exponent = exponent / 3 + 682;
 
         var value = BitConverter.UInt64BitsToDouble((sign << 53) | (exponent << 52) | mantissa);
-        for (var i = 0; i < 6; ++i)
+        for (var i = 0; i < 4; ++i)
             value = value - (value - x / (value * value)) / 3;
 
         return value;

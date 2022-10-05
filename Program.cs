@@ -2,13 +2,15 @@
 
 try
 {
-    CubeRootTask.Run();
+    /*CubeRootTask.Run();
     FibonacciTask.Run();
     FactorizationTask.Run();
     GCD_LSM_Task.Run();
     SortTask.Run();
     ChessTask.Run();
-    SummingSeriesTask.Run();
+    SummingSeriesTask.Run();*/
+
+    PS2_1_Task.Run();
 }
 catch (Exception ex)
 {
