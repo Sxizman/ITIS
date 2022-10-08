@@ -6,7 +6,7 @@ public static class PS2_1_Task
 
     private const int StepsLimit = 1000000;
 
-    private static int alpha;
+    private static double alpha;
 
     private static (double, int) Exp(double x, double epsilon)
     {
@@ -79,7 +79,19 @@ public static class PS2_1_Task
 
     private static (double, int) Pow(double x, double epsilon)
     {
-        throw new NotImplementedException();
+        var expectedSum = Math.Pow(1 + x, alpha);
+
+        var step = 1;
+        var term = 1.0;
+        var sum = 1.0;
+        while (!(Math.Abs(expectedSum - sum) < epsilon) && step < StepsLimit)
+        {
+            term *= (alpha - step + 1) * x / step;
+            sum += term;
+            ++step;
+        }
+
+        return (sum, step);
     }
 
     private static (double, int) AtanSmall(double x, double epsilon)
@@ -160,8 +172,95 @@ public static class PS2_1_Task
         var sum = 1.0;
         while (!(Math.Abs(expectedSum - sum) < epsilon) && step < StepsLimit)
         {
-            term *= -x * (2 * step - 1) * (2 * step) / ((double)step * step * 4);
+            term *= -x * (step - 0.5) / step;
             sum += term / (1 - 2 * step);
+            ++step;
+        }
+
+        return (sum, step);
+    }
+
+    private static (double, int) Pow2(double x, double epsilon)
+    {
+        var expectedSum = Math.Pow(x, alpha);
+
+        var step = 1;
+        var term = x;
+        var sum = x;
+        var logX = Math.Log(x);
+        while (!(Math.Abs(expectedSum - sum) < epsilon) && step < StepsLimit)
+        {
+            term *= (alpha - 1) * logX / step;
+            sum += term;
+            ++step;
+        }
+
+        return (sum, step);
+    }
+
+    private static (double, int) SqrCos(double x, double epsilon)
+    {
+        var expectedSum = Math.Pow(Math.Cos(x), 2);
+
+        var step = 1;
+        var term = 0.5;
+        var sum = 1.0;
+        while (!(Math.Abs(expectedSum - sum) < epsilon) && step < StepsLimit)
+        {
+            term *= -x * x / ((step - 0.5) * step);
+            sum += term;
+            ++step;
+        }
+
+        return (sum, step);
+    }
+
+    private static (double, int) InvSqrt(double x, double epsilon)
+    {
+        var expectedSum = 1 / Math.Sqrt(x + 1);
+
+        var step = 1;
+        var term = 1.0;
+        var sum = 1.0;
+        while (!(Math.Abs(expectedSum - sum) < epsilon) && step < StepsLimit)
+        {
+            term *= -x * (step - 0.5) / step;
+            sum += term;
+            ++step;
+        }
+
+        return (sum, step);
+    }
+
+    private static (double, int) InvSquare(double x, double epsilon)
+    {
+        var expectedSum = 1 / ((1 + x) * (1 + x));
+
+        var step = 1;
+        var term = 1.0;
+        var sum = 1.0;
+        while (!(Math.Abs(expectedSum - sum) < epsilon) && step < StepsLimit)
+        {
+            term *= -x;
+            sum += term * (step + 1);
+            ++step;
+        }
+
+        return (sum, step);
+    }
+
+    private static (double, int) PowOf3(double x, double epsilon)
+    {
+        var expectedSum = Math.Pow(3, x);
+
+        var step = 1;
+        var term = 1.0;
+        var sum = 1.0;
+        var log3 = Math.Log(3);
+        while (!(Math.Abs(expectedSum - sum) < epsilon) && step < StepsLimit)
+        {
+            term *= x * log3 / step;
+            sum += term;
             ++step;
         }
 
@@ -179,12 +278,17 @@ public static class PS2_1_Task
             ("e^(1/x)", ExpInv),
             ("cos(x)", Cos),
             ("ln(1 + x)", Log),
-            ("not implemented", Pow),
+            ("(1 + x)^alpha", Pow),
             ("arctg(x)", AtanSmall),
             ("arctg(x)", AtanBig),
             ("sinh(x)", Sinh),
             ("cosh(x)", Cosh),
-            ("sqrt(1 + x)", Sqrt)
+            ("sqrt(1 + x)", Sqrt),
+            ("x^alpha", Pow2),
+            ("cos^2(x)", SqrCos),
+            ("1/sqrt(1 + x)", InvSqrt),
+            ("1/((1 + x)^2)", InvSquare),
+            ("3^x", PowOf3)
         };
 
         Console.Write("Номер задачи: ");
@@ -192,7 +296,11 @@ public static class PS2_1_Task
 
         Console.Write("x = ");
         var x = double.Parse(Console.ReadLine() ?? "");
-
+        if (taskIndex == 4 || taskIndex == 10)
+        {
+            Console.Write("alpha = ");
+            alpha = double.Parse(Console.ReadLine() ?? "");
+        }
 
         Console.Write("Точность вычислений epsilon = ");
         var epsilon = double.Parse(Console.ReadLine() ?? "");
