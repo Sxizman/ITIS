@@ -10,7 +10,8 @@ try
     ChessTask.Run();
     SummingSeriesTask.Run();*/
 
-    PS2_1_Task.Run();
+    //PS2_1_Task.Run();
+    ArraysTask.Run();
 }
 catch (Exception ex)
 {
