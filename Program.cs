@@ -8,10 +8,11 @@ try
     GCD_LSM_Task.Run();
     SortTask.Run();
     ChessTask.Run();
-    SummingSeriesTask.Run();*/
+    SummingSeriesTask.Run();
+    PS2_1_Task.Run();
+    ArraysTask.Run();*/
 
-    //PS2_1_Task.Run();
-    ArraysTask.Run();
+    SquareMatrixTask.Run();
 }
 catch (Exception ex)
 {
