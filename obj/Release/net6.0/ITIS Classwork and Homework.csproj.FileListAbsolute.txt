@@ -1,0 +1,15 @@
+D:\programming\c#\ITIS Classwork and Homework\ITIS Classwork and Homework\bin\Release\net6.0\ITIS Classwork and Homework.exe
+D:\programming\c#\ITIS Classwork and Homework\ITIS Classwork and Homework\bin\Release\net6.0\ITIS Classwork and Homework.deps.json
+D:\programming\c#\ITIS Classwork and Homework\ITIS Classwork and Homework\bin\Release\net6.0\ITIS Classwork and Homework.runtimeconfig.json
+D:\programming\c#\ITIS Classwork and Homework\ITIS Classwork and Homework\bin\Release\net6.0\ITIS Classwork and Homework.dll
+D:\programming\c#\ITIS Classwork and Homework\ITIS Classwork and Homework\bin\Release\net6.0\ITIS Classwork and Homework.pdb
+D:\programming\c#\ITIS Classwork and Homework\ITIS Classwork and Homework\obj\Release\net6.0\ITIS Classwork and Homework.csproj.AssemblyReference.cache
+D:\programming\c#\ITIS Classwork and Homework\ITIS Classwork and Homework\obj\Release\net6.0\ITIS Classwork and Homework.GeneratedMSBuildEditorConfig.editorconfig
+D:\programming\c#\ITIS Classwork and Homework\ITIS Classwork and Homework\obj\Release\net6.0\ITIS Classwork and Homework.AssemblyInfoInputs.cache
+D:\programming\c#\ITIS Classwork and Homework\ITIS Classwork and Homework\obj\Release\net6.0\ITIS Classwork and Homework.AssemblyInfo.cs
+D:\programming\c#\ITIS Classwork and Homework\ITIS Classwork and Homework\obj\Release\net6.0\ITIS Classwork and Homework.csproj.CoreCompileInputs.cache
+D:\programming\c#\ITIS Classwork and Homework\ITIS Classwork and Homework\obj\Release\net6.0\ITIS Classwork and Homework.dll
+D:\programming\c#\ITIS Classwork and Homework\ITIS Classwork and Homework\obj\Release\net6.0\refint\ITIS Classwork and Homework.dll
+D:\programming\c#\ITIS Classwork and Homework\ITIS Classwork and Homework\obj\Release\net6.0\ITIS Classwork and Homework.pdb
+D:\programming\c#\ITIS Classwork and Homework\ITIS Classwork and Homework\obj\Release\net6.0\ITIS Classwork and Homework.genruntimeconfig.cache
+D:\programming\c#\ITIS Classwork and Homework\ITIS Classwork and Homework\obj\Release\net6.0\ref\ITIS Classwork and Homework.dll

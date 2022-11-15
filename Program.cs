@@ -12,7 +12,10 @@ try
     PS2_1_Task.Run();
     ArraysTask.Run();*/
 
-    SquareMatrixTask.Run();
+    //SquareMatrixTask.Run();
+    //StringTask.Run();
+
+    ArraySortTask.Run();
 }
 catch (Exception ex)
 {
