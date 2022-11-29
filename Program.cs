@@ -15,7 +15,9 @@ try
     //SquareMatrixTask.Run();
     //StringTask.Run();
 
-    ArraySortTask.Run();
+    //ArraySortTask.Run();
+
+    ComplexTask.Run();
 }
 catch (Exception ex)
 {
