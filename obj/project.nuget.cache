@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "+Cj2OexG86C5IjtMLMpPPLXltZpWIGSPHOZ7FfUz3orJp9A+H/hMHRxrcN/MkzkfJ8DRgFhtuHfJsL2+1u+pKA==",
+  "dgSpecHash": "sSSzw+DW2Esg6x5YFyJ8xMe0+GUhcLTNm8a3vJCSD/+6TxbBs+Bd5DOTzyLxmOmvSllIjsSO0fTySW8TAFgx4Q==",
   "success": true,
   "projectFilePath": "D:\\programming\\c#\\ITIS Classwork and Homework\\ITIS Classwork and Homework\\ITIS Classwork and Homework.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\germa\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\germa\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
+    "C:\\Users\\germa\\.nuget\\packages\\nunit\\3.13.3\\nunit.3.13.3.nupkg.sha512",
+    "C:\\Users\\germa\\.nuget\\packages\\nunit3testadapter\\4.3.1\\nunit3testadapter.4.3.1.nupkg.sha512"
+  ],
   "logs": []
 }

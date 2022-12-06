@@ -13,3 +13,11 @@ D:\programming\c#\ITIS Classwork and Homework\ITIS Classwork and Homework\obj\De
 D:\programming\c#\ITIS Classwork and Homework\ITIS Classwork and Homework\obj\Debug\net6.0\ITIS Classwork and Homework.pdb
 D:\programming\c#\ITIS Classwork and Homework\ITIS Classwork and Homework\obj\Debug\net6.0\ITIS Classwork and Homework.genruntimeconfig.cache
 D:\programming\c#\ITIS Classwork and Homework\ITIS Classwork and Homework\obj\Debug\net6.0\ref\ITIS Classwork and Homework.dll
+D:\programming\c#\ITIS Classwork and Homework\ITIS Classwork and Homework\bin\Debug\net6.0\NUnit3.TestAdapter.dll
+D:\programming\c#\ITIS Classwork and Homework\ITIS Classwork and Homework\bin\Debug\net6.0\NUnit3.TestAdapter.pdb
+D:\programming\c#\ITIS Classwork and Homework\ITIS Classwork and Homework\bin\Debug\net6.0\nunit.engine.dll
+D:\programming\c#\ITIS Classwork and Homework\ITIS Classwork and Homework\bin\Debug\net6.0\nunit.engine.api.dll
+D:\programming\c#\ITIS Classwork and Homework\ITIS Classwork and Homework\bin\Debug\net6.0\nunit.engine.core.dll
+D:\programming\c#\ITIS Classwork and Homework\ITIS Classwork and Homework\bin\Debug\net6.0\testcentric.engine.metadata.dll
+D:\programming\c#\ITIS Classwork and Homework\ITIS Classwork and Homework\bin\Debug\net6.0\nunit.framework.dll
+D:\programming\c#\ITIS Classwork and Homework\ITIS Classwork and Homework\obj\Debug\net6.0\ITIS Classwork and Homework.csproj.CopyComplete

@@ -1,4 +1,6 @@
-﻿namespace ITIS;
+﻿using NUnit.Framework;
+
+namespace ITIS;
 
 public class TrigonometricComplex
 {
@@ -87,5 +89,84 @@ public class TrigonometricComplex
             left.mod / right.mod,
             left.arg - right.arg
             );
+    }
+}
+
+[TestFixture]
+public class TrigonometricComplex_Tests
+{
+    private static double Epsilon = 1e-10;
+
+    [TestCase(1, 0, 1, 0, 1, 0)]
+    [TestCase(4, 0, 5, 0, 20, 0)]
+
+    [TestCase(3, Math.PI, 5, 0, 15, Math.PI)]
+    [TestCase(4, 0, 1, Math.PI, 4, Math.PI)]
+    [TestCase(2, Math.PI, 8, -Math.PI, 16, 0)]
+    public void TestMultiplication(double leftMod, double leftArg, double rightMod, double rightArg, double expectedMod, double expectedArg)
+    {
+        var left = TrigonometricComplex.FromTrigonometric(leftMod, leftArg);
+        var right = TrigonometricComplex.FromTrigonometric(rightMod, rightArg);
+        var result = left * right;
+
+        Assert.AreEqual(expectedMod, result.Mod, Epsilon);
+        Assert.AreEqual(expectedArg, result.Arg, Epsilon);
+    }
+
+    [TestCase(0, 0, 0, 0)]
+    [TestCase(2, 0, 0, 5)]
+    [TestCase(7, 2, 0, 6)]
+    [TestCase(0, 3, 4, 7)]
+    public void TestMultiplicationByZero(double leftMod, double leftArg, double rightMod, double rightArg)
+    {
+        var left = TrigonometricComplex.FromTrigonometric(leftMod, leftArg);
+        var right = TrigonometricComplex.FromTrigonometric(rightMod, rightArg);
+        var result = left * right;
+
+        Assert.AreEqual(0, result.Mod);
+    }
+
+    [TestCase(1, 0, 1, 0, 1, 0)]
+    [TestCase(9, 0, 3, 0, 3, 0)]
+
+    [TestCase(4, 0, 1, Math.PI, 4, -Math.PI)]
+    [TestCase(6, Math.PI, 2, Math.PI, 3, 0)]
+    [TestCase(8, 0, 8, -Math.PI, 1, Math.PI)]
+    public void TestDivision(double leftMod, double leftArg, double rightMod, double rightArg, double expectedMod, double expectedArg)
+    {
+        var left = TrigonometricComplex.FromTrigonometric(leftMod, leftArg);
+        var right = TrigonometricComplex.FromTrigonometric(rightMod, rightArg);
+        var result = left / right;
+
+        Assert.AreEqual(expectedMod, result.Mod, Epsilon);
+        Assert.AreEqual(expectedArg, result.Arg, Epsilon);
+    }
+
+    [TestCase(1, 0,   1)]
+    [TestCase(3, Math.PI,   -3)]
+    [TestCase(2, Math.PI / 2,   0)]
+    public void TestReProp(double mod, double arg, double expectedRe)
+    {
+        var value = TrigonometricComplex.FromTrigonometric(mod, arg);
+        Assert.AreEqual(expectedRe, value.Re, Epsilon);
+    }
+
+    [TestCase(1, 0,   0)]
+    [TestCase(4, Math.PI,   0)]
+    [TestCase(6, Math.PI / 2,   6)]
+    public void TestImProp(double mod, double arg, double expectedIm)
+    {
+        var value = TrigonometricComplex.FromTrigonometric(mod, arg);
+        Assert.AreEqual(expectedIm, value.Im, Epsilon);
+    }
+
+    [TestCase(1, 0,   1, 0)]
+    [TestCase(-3, 0,   3, Math.PI)]
+    [TestCase(0, 8,   8, Math.PI / 2)]
+    public void TestCreateFromAlgebraic(double re, double im, double expectedMod, double expectedArg)
+    {
+        var value = TrigonometricComplex.FromAlgebraic(re, im);
+        Assert.AreEqual(expectedMod, value.Mod, Epsilon);
+        Assert.AreEqual(expectedArg, value.Arg, Epsilon);
     }
 }
