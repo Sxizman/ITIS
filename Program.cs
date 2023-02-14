@@ -17,7 +17,9 @@ try
 
     //ArraySortTask.Run();
 
-    ComplexTask.Run();
+    //ComplexTask.Run();
+
+    StackTask.Run();
 }
 catch (Exception ex)
 {
