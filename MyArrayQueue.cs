@@ -1,6 +1,6 @@
 ﻿namespace ITIS;
 
-public class MyStack<T>
+public class MyArrayQueue<T>
 {
     public const int MaxSizeDefault = 1024;
 
@@ -8,34 +8,40 @@ public class MyStack<T>
     private int count;
     private T[] array;
 
-    public MyStack() : this(MaxSizeDefault)
+    public MyArrayQueue() : this(MaxSizeDefault)
     {
 
     }
 
-    public MyStack(int maxSize)
+    public MyArrayQueue(int maxSize)
     {
         if (maxSize < 0)
-            throw new ArgumentOutOfRangeException("Stack max size can not be negative");
+            throw new ArgumentOutOfRangeException("Queue max size can not be negative");
 
         this.maxSize = maxSize;
         array = new T[maxSize];
     }
 
-    public void Push(T element)
+    public void Enqueue(T element)
     {
         if (count == maxSize)
-            throw new InvalidOperationException("Stack overflow");
+            throw new InvalidOperationException("Queue overflow");
 
         array[count++] = element;
     }
 
-    public T Pop()
+    public T Dequeue()
     {
         if (count == 0)
             throw new InvalidOperationException("Stack is empty");
 
-        return array[--count];
+        var element = array[0];
+        --count;
+
+        for (var i = 0; i < count; ++i)
+            array[i] = array[i + 1];
+
+        return element;
     }
 
     public T Peek()
@@ -43,7 +49,7 @@ public class MyStack<T>
         if (count == 0)
             throw new InvalidOperationException("Stack is empty");
 
-        return array[count - 1];
+        return array[0];
     }
 
     public void Clear()
